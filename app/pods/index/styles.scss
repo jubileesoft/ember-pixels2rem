@@ -6,7 +6,7 @@
 
 .card {
   background: #ffffff;
-  padding: 1.5rem 3rem; // 24px 48px with 16px default font-size
+  padding: 1.5rem; // 24px with 16px default font-size
 
   display: flex;
   flex-direction: column;
@@ -33,5 +33,9 @@
 .card .row .item {
   grid-column-start: 1;
   grid-column-end: 3;
+}
+
+.gap {
+  margin-bottom: 0.75rem; // 12px with 16px default font-size
 }
 

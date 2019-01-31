@@ -10,6 +10,16 @@ export default Controller.extend({
   // #endregion Properties
 
 
+  // #region Hooks
+
+  init() {
+    this._super(...arguments);
+    this.px2rem();
+  },
+
+  // #endregion Hooks
+
+
   // #region Methods
 
   somethingChanged: observer('px', 'defaultPx', function () {
@@ -24,7 +34,7 @@ export default Controller.extend({
       rem = Number(rem.toFixed(6));
       this.set('rem', rem + 'rem');
     }
-  }
+  },
 
   // #endregion Methods
 });
