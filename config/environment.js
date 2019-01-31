@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'ember-pixels2rem',
+    podModulePrefix: 'ember-pixels2rem/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',

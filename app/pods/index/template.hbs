@@ -1,0 +1,29 @@
+<div local-class="root">
+  <div class="media">
+    <div local-class="card">
+      
+      <div local-class="row">
+        
+        <JubileeTextField 
+          class={{local-class "item1"}}
+          @label="Default font-size"
+          @label2="(px)"
+          @text={{this.defaultPx}}
+        />
+        <JubileeTextField 
+          class={{local-class "item2"}}
+          @label="Pixels"
+          @text={{this.px}}
+        />
+      </div>
+
+      <div local-class="row">
+        <JubileeTextField 
+          class={{local-class "item"}}
+          @label="Result in rem"
+          @text={{this.rem}}
+        />
+      </div>
+    </div>
+  </div>
+</div>
