@@ -21,7 +21,6 @@
     "test": "ember test"
   },
   "devDependencies": {
-    "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
     "@jubileesoft/ember-jubileesoft-ui": "^0.3.0",
     "broccoli-asset-rev": "^2.7.0",
