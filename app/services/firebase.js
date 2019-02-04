@@ -1,9 +1,7 @@
 import Service from '@ember/service';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-//const firebase = require("firebase");
-// Required for side-effects
-//require("firebase/firestore");
+import fetch from 'ember-fetch/ajax';
 
 export default Service.extend({
   // #region Fields
@@ -51,7 +49,7 @@ export default Service.extend({
     }
 
     try {
-      const ip = await $.get('https://ipapi.co/json/');
+      const ip = await fetch('https://ipapi.co/json/');
 
       var docRef = await this._db.collection('visits').add({
         on: firebase.firestore.Timestamp.fromDate(new Date()),
