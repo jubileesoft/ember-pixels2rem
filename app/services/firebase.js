@@ -1,9 +1,7 @@
 import Service from '@ember/service';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-//const firebase = require("firebase");
-// Required for side-effects
-//require("firebase/firestore");
+import fetch from 'ember-fetch/ajax';
 
 export default Service.extend({
   // #region Fields
@@ -51,9 +49,9 @@ export default Service.extend({
     }
 
     try {
-      const ip = await $.get('https://ipapi.co/json/');
+      const ip = await fetch('https://ipapi.co/json/');
 
-      var docRef = await this._db.collection('visits').add({
+      await this._db.collection('visits').add({
         on: firebase.firestore.Timestamp.fromDate(new Date()),
         userAgent: navigator.userAgent,
         ipInfo: ip
@@ -68,7 +66,7 @@ export default Service.extend({
   getLastVisit() {
     return new Promise(async (resolve, reject) => {
       try {
-        let snapshot = await this._db.collection('visits').orderBy('on').limit(1).get();
+        let snapshot = await this._db.collection('visits').orderBy('on', 'desc').limit(1).get();
         snapshot.forEach(doc => {
           resolve(doc.data().on.toDate());
           return;
