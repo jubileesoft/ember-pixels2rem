@@ -66,7 +66,7 @@ export default Service.extend({
   getLastVisit() {
     return new Promise(async (resolve, reject) => {
       try {
-        let snapshot = await this._db.collection('visits').orderBy('on').limit(1).get();
+        let snapshot = await this._db.collection('visits').orderBy('on', 'desc').limit(1).get();
         snapshot.forEach(doc => {
           resolve(doc.data().on.toDate());
           return;
