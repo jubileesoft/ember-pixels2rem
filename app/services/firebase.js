@@ -51,7 +51,7 @@ export default Service.extend({
     try {
       const ip = await fetch('https://ipapi.co/json/');
 
-      var docRef = await this._db.collection('visits').add({
+      await this._db.collection('visits').add({
         on: firebase.firestore.Timestamp.fromDate(new Date()),
         userAgent: navigator.userAgent,
         ipInfo: ip
