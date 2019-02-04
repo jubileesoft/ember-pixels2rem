@@ -1,6 +1,14 @@
 <div local-class="root">
   <div class="media">
-    <div local-class="card">      
+    <div local-class="card">
+
+      {{#if this.lastVisitOn}}
+        <div local-class="lastVisit">
+          Last usage on: {{this.lastVisitOn}}
+        </div>
+      {{/if}}
+      
+
       <div local-class="row gap">
         
         <JubileeTextField 
