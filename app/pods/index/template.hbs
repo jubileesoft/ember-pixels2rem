@@ -1,6 +1,14 @@
 <div local-class="root">
   <div class="media">
-    <div local-class="card">      
+    <div local-class="card">
+
+      {{#if this.lastVisitOn}}
+        <div local-class="lastVisit">
+          Last usage on: {{this.lastVisitOn}}
+        </div>
+      {{/if}}
+      
+
       <div local-class="row gap">
         
         <JubileeTextField 
@@ -8,13 +16,11 @@
           @label="Default"
           @label2="(pixels)"
           @text={{this.defaultPx}}
-          @onClickSelect={{true}}
         />
         <JubileeTextField 
           class={{local-class "item2"}}
           @label="Pixels"
           @text={{this.px}}
-          @onClickSelect={{true}}
         />
       </div>
 
@@ -23,7 +29,6 @@
           class={{local-class "item"}}
           @label="Result in rem"
           @text={{this.rem}}
-          @onClickSelect={{true}}
         />
       </div>
 

@@ -1,5 +1,6 @@
 import Controller from '@ember/controller';
 import { observer } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   // #region Properties
@@ -10,11 +11,30 @@ export default Controller.extend({
   // #endregion Properties
 
 
+  // #region Services
+
+  firebase: service(),
+
+  // #endregion Services
+
+
   // #region Hooks
 
   init() {
     this._super(...arguments);
     this.px2rem();
+
+    this.firebase.getLastVisit().then(lastVisitOn => {
+      if (lastVisitOn != null) {
+        this.set('lastVisitOn', lastVisitOn);        
+      }
+
+      this.firebase.logVisit();
+    }).catch(e => {
+      console.log(e);
+    });
+
+
   },
 
   // #endregion Hooks
