@@ -40,6 +40,16 @@
 }
 
 .lastVisit {
-  
   margin-bottom: 1.5rem;
+}
+
+.footer {
+  margin-top: 0.25rem; // 4px with 16px default font-size
+  margin-right: 0.25rem; // 4px with 16px default font-size
+
+  display: flex;
+  flex-direction: row-reverse;
+
+  font-size: 12px;
+  color: #696e6d;
 }
