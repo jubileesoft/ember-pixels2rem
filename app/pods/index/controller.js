@@ -1,6 +1,6 @@
 import Controller from '@ember/controller';
-import { observer } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { action } from '@ember/object';
 
 export default Controller.extend({
   // #region Properties
@@ -26,12 +26,12 @@ export default Controller.extend({
 
     this.firebase.getLastVisit().then(lastVisitOn => {
       if (lastVisitOn != null) {
-        this.set('lastVisitOn', lastVisitOn);        
+        this.set('lastVisitOn', lastVisitOn);
       }
 
       this.firebase.logVisit();
     }).catch(e => {
-      console.log(e);
+      window.console.log(e);
     });
 
 
@@ -40,13 +40,13 @@ export default Controller.extend({
   // #endregion Hooks
 
 
-  // #region Methods
+  // #region Actions
 
-  somethingChanged: observer('px', 'defaultPx', function () {
-    this.px2rem();
-  }),
+  px2rem: action(function (originProperty, value) {
+    if (originProperty === 'px' || originProperty === 'defaultPx') {
+      this.set(originProperty, value);
+    }
 
-  px2rem() {
     let rem = this.px / this.defaultPx;
     if (isNaN(rem)) {
       this.set('rem', '');
@@ -54,7 +54,7 @@ export default Controller.extend({
       rem = Number(rem.toFixed(6));
       this.set('rem', rem + 'rem');
     }
-  },
+  }),
 
-  // #endregion Methods
+  // #endregion Actions
 });

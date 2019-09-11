@@ -29,12 +29,6 @@ export default Service.extend({
 
     const db = firebase.firestore();
 
-    const settings = {
-      timestampsInSnapshots: true
-    };
-
-    db.settings(settings);
-
     this.set('_db', db);
   },
 
@@ -59,7 +53,7 @@ export default Service.extend({
 
       this.set('_visitLogged', true);
     } catch (e) {
-      console.log('Firebase error: ' + e);
+      window.console.log('Firebase error: ' + e);
     }
   },
 
