@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
-    "@jubileesoft/ember-jubileesoft-ui": "^0.3.0",
+    "@jubileesoft/ember-jubileesoft-ui": "^0.6.1",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.2.19",
     "ember-cli": "~3.12.0",
