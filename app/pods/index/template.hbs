@@ -16,11 +16,13 @@
           @label="Default"
           @label2="(pixels)"
           @text={{this.defaultPx}}
+          @onChange={{fn this.px2rem "defaultPx"}}
         />
         <JubileeTextField 
           class={{local-class "item2"}}
           @label="Pixels"
           @text={{this.px}}
+          @onChange={{fn this.px2rem "px"}}
         />
       </div>
 
@@ -29,6 +31,7 @@
           class={{local-class "item"}}
           @label="Result in rem"
           @text={{this.rem}}
+          @isReadonly={{true}}
         />
       </div>
 
