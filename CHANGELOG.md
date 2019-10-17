@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Unreleased
 
+No unrelease changes.
+
+## <span style="color: #0366d6;">1.0.3</span>
+
 ##### Changed
 
 - Bump ember-cli from 3.12.0 to 3.13.0
