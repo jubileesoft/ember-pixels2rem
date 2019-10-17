@@ -57,6 +57,6 @@
     "node": "8.* || >= 10.*"
   },
   "dependencies": {
-    "firebase": "^6.6.0"
+    "firebase": "^7.2.1"
   }
 }
