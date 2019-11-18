@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Unreleased
 
-No unrelease changes.
+##### Changed
+
+- Switch to yarn
 
 ## <span style="color: #0366d6;">1.0.3</span>
 
