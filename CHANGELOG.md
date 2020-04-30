@@ -2,9 +2,11 @@
 
 All notable changes to this project will be documented in this file. The format ist based on [Keep a Changelog](https://keepachangelog.com) and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## Unreleased
+## <span style="color: #0366d6;">1.0.4</span>
 
-No unrelease changes.
+##### Changed
+
+- Switch to yarn
 
 ## <span style="color: #0366d6;">1.0.3</span>
 
